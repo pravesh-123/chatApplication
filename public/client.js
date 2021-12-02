@@ -67,7 +67,10 @@ getLVideo({
 var conn;
 var peer_id;
 
-var peer = new Peer();
+var peer = new Peer({
+  host: "/",
+  port: "3001",
+});
 
 peer.on("open", function () {
   document.getElementById("displayId").innerHTML = peer.id;
