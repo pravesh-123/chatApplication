@@ -67,7 +67,9 @@ getLVideo({
 var conn;
 var peer_id;
 
-var peer = new Peer();
+var peer = new Peer({
+  config: { iceServers: [{ url: "stun:stun.l.google.com:19302" }] },
+});
 
 peer.on("open", function () {
   document.getElementById("displayId").innerHTML = peer.id;
